@@ -21,9 +21,10 @@ export class LayoutComponent implements OnInit {
     if(!localStorage.getItem("jwtToken")){
       this.router.navigate(["/login"]);
     }
+
     router.events.forEach((event) => {
     if (event instanceof NavigationStart) {
-    this.showSidebar = true;
+          this.showSidebar = true;
           this.showNavbar = true;
           this.showFooter = true;
           document.querySelector(".main-panel").classList.remove("w-100");

@@ -15,6 +15,8 @@ import { MegaMenuModule } from "primeng/megamenu";
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { ChartsModule, ThemeService } from "ng2-charts";
+import { MedicalRegistrationComponent } from '../medical-registration/medical-registration.component';
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { ChartsModule, ThemeService } from "ng2-charts";
     TodoListComponent,
     TodoComponent,
     MenuItemsComponent,
-    LayoutComponent],
+    LayoutComponent,
+    MedicalRegistrationComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,

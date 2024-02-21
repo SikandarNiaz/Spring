@@ -5,9 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - #{$navbar-height} - 5.5rem);
+  height: 100vh;
   position: fixed;
-  width: calc(100% - #{$sidebar-width-lg} - 4rem);
+  width:100%;
   @media (max-width: 991px) {
     width: 100%;
   }

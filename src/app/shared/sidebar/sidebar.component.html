@@ -24,7 +24,18 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    <li
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/main/shop-card"
+        routerLinkActive
+        #dashboard="routerLinkActive"
+      >
+        <span class="menu-title">Shop Cards</span>
+        <!-- <i class="mdi mdi-home menu-icon"></i> -->
+      </a>
+    </li>
+    <!-- <li
       class="nav-item"
       [ngClass]="{
         active:
@@ -208,7 +219,7 @@
         <span class="menu-title">Icons</span>
         <i class="mdi mdi-contacts menu-icon"></i>
       </a>
-    </li>
+    </li> -->
     <!-- <li
       class="nav-item"
       [ngClass]="{
@@ -286,5 +297,5 @@
       </div>
     </li> -->
   </ul>
-  <p-megaMenu [model]="items" [orientation]="vertical"></p-megaMenu>
+  <!-- <p-megaMenu [model]="items" [orientation]="vertical"></p-megaMenu> -->
 </nav>
