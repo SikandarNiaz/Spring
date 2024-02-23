@@ -1,39 +1,44 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import {
-  NavigationStart
-} from "@angular/router";
+import { NavigationStart } from "@angular/router";
+import { AuthService } from "../service/auth.service";
+import { MessageService } from "primeng/api";
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
+  providers: [MessageService],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router:Router) {
-
-    router.events.forEach((event) => {
-      if (event instanceof NavigationStart) {
-       
-          document.querySelector(".main-panel").classList.add("w-100");
-          document
-            .querySelector(".page-body-wrapper")
-            .classList.add("full-page-wrapper");
-          document
-            .querySelector(".content-wrapper")
-            .classList.remove("auth", "auth-img-bg");
-          document
-            .querySelector(".content-wrapper")
-            .classList.remove("auth", "lock-full-bg");
-      }
-    });
-  }
+  loginForm: any = {
+    username: "",
+    password: "",
+  };
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit() {}
 
-  signIn(){
-    localStorage.setItem("jwtToken", "982497848748743");
-    this.router.navigate(["/main"]);
+  signIn(loginForm: any) {
+    console.log(loginForm);
+    this.authService.login(loginForm).subscribe(
+      (response) => {
+        if (response.token) {
+          localStorage.setItem("jwtToken", response.token);
+          this.router.navigate(["/main"]);
+        }
+      },
+      (error: any) => {
+        this.messageService.add({
+          severity: "error",
+          summary: "Error",
+          detail: "Please check if credentials are correct",
+        });
+      }
+    );
   }
 }
-
