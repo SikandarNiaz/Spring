@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { MedicalRegistrationComponent } from '../medical-registration/medical-registration.component';
 
 const routes: Routes = [
     {
@@ -13,6 +14,7 @@ const routes: Routes = [
                 redirectTo: 'dashboard'
             },
             { path: "dashboard", component: DashboardComponent },
+            { path: "shop-card", component: MedicalRegistrationComponent },
   {
     path: "basic-ui",
     loadChildren: () =>

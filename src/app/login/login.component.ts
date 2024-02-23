@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { NavigationStart } from "@angular/router";
 import { AuthService } from "../service/auth.service";
 import { MessageService } from "primeng/api";
 
@@ -20,7 +19,6 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private messageService: MessageService
   ) {}
-
   ngOnInit() {}
 
   signIn(loginForm: any) {
