@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { LayoutComponent } from "./layout/layout.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
 import { MedicalRegistrationComponent } from "../medical-registration/medical-registration.component";
+import { CreateInvoiceComponent } from "./create-invoice/create-invoice.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       },
       { path: "dashboard", component: DashboardComponent },
       { path: "shop-card", component: MedicalRegistrationComponent },
+      { path: "create-invoice", component: CreateInvoiceComponent },
       {
         path: "basic-ui",
         loadChildren: () =>

@@ -16,6 +16,9 @@ import { LayoutRoutingModule } from "./layout-routing.module";
 import { LayoutComponent } from "./layout/layout.component";
 import { ChartsModule, ThemeService } from "ng2-charts";
 import { MedicalRegistrationComponent } from "../medical-registration/medical-registration.component";
+import { CreateInvoiceComponent } from "./create-invoice/create-invoice.component";
+import { InvoiceListComponent } from "./invoice-list/invoice-list.component";
+import { DropdownModule } from "primeng/dropdown";
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { MedicalRegistrationComponent } from "../medical-registration/medical-re
     MenuItemsComponent,
     LayoutComponent,
     MedicalRegistrationComponent,
+    CreateInvoiceComponent,
+    InvoiceListComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +43,7 @@ import { MedicalRegistrationComponent } from "../medical-registration/medical-re
     ReactiveFormsModule,
     ChartsModule,
     MegaMenuModule,
+    DropdownModule,
   ],
   providers: [ThemeService],
 })

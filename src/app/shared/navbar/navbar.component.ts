@@ -12,9 +12,11 @@ export class NavbarComponent implements OnInit {
   public iconOnlyToggled = false;
   public sidebarToggled = false;
   items: MegaMenuItem[] | undefined;
+  userInfo: any = {};
 
   constructor(config: NgbDropdownConfig) {
     config.placement = "bottom-right";
+    this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
   }
 
   ngOnInit() {

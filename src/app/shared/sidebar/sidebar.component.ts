@@ -8,11 +8,17 @@ import { MegaMenuItem } from "primeng/api";
 })
 export class SidebarComponent implements OnInit {
   public uiBasicCollapsed = false;
+  public uiInvoiceCollapsed = false;
   public samplePagesCollapsed = false;
   items: MegaMenuItem[] | undefined;
   vertical: any;
+  menuItems: any = [];
+  userInfo: any = {};
 
-  constructor() {}
+  constructor() {
+    this.menuItems = JSON.parse(localStorage.getItem("menus"));
+    this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  }
 
   ngOnInit() {
     const body = document.querySelector("body");

@@ -7,8 +7,10 @@
           <span class="login-status online"></span>
         </div>
         <div class="nav-profile-text">
-          <span class="font-weight-bold mb-2">Sikandar Niaz</span>
-          <span class="text-secondary text-small">Supervisor</span>
+          <span class="font-weight-bold mb-2">{{ userInfo.username }}</span>
+          <span class="text-secondary text-small">{{
+            userInfo.role.title
+          }}</span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
@@ -35,6 +37,7 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li> -->
+
     <li
       class="nav-item"
       [ngClass]="{
@@ -291,6 +294,33 @@
               #error500="routerLinkActive"
             >
               500
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        (click)="uiInvoiceCollapsed = !uiInvoiceCollapsed"
+        [attr.aria-expanded]="uiInvoiceCollapsed"
+        aria-controls="invoice"
+      >
+        <span class="menu-title">Invoice Management</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-cash-100 menu-icon"></i>
+      </a>
+      <div class="collapse" id="auth" [ngbCollapse]="!uiInvoiceCollapsed">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item" *ngFor="let item of menuItems">
+            <a
+              class="nav-link"
+              routerLink="/main/{{ item.link }}"
+              routerLinkActive="active"
+              #menu="routerLinkActive"
+            >
+              {{ item.menuTitle }}
             </a>
           </li>
         </ul>

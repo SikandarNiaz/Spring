@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
       (response) => {
         if (response.token) {
           localStorage.setItem("jwtToken", response.token);
+          localStorage.setItem("menus", JSON.stringify(response.menus));
+          localStorage.setItem("userInfo", JSON.stringify(response.user));
+          localStorage.setItem("hospitals", JSON.stringify(response.hospitals));
           this.router.navigate(["/main"]);
         }
       },

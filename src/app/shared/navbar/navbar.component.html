@@ -42,7 +42,7 @@
             <span class="availability-status online"></span>
           </div>
           <div class="nav-profile-text">
-            <p class="mb-1 text-black">Sikandar Niaz</p>
+            <p class="mb-1 text-black">{{ userInfo.username }}</p>
           </div>
         </a>
         <div
@@ -55,11 +55,7 @@
             Activity Log
           </a> -->
           <div class="dropdown-divider"></div>
-          <a
-            class="dropdown-item"
-            href="javascript:;"
-            routerLink="/login"
-          >
+          <a class="dropdown-item" href="javascript:;" routerLink="/login">
             <i class="mdi mdi-logout mr-2 text-primary"></i>
             Signout
           </a>
