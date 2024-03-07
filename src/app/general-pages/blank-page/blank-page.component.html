@@ -1,0 +1,26 @@
+<input type="text" class="form-control" id="exampleInputUsername1" placeholder="Service"  [(ngModel)]="inputValue" (input)="filterTable()">
+<div *ngIf="showPopup" class="table-popup">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Service</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="filteredSuggestions.length > 0; else noData">
+        <tr *ngFor="let option of filteredSuggestions" (click)="selectOption(option)">
+          <td>{{ option.category }}</td>
+          <td>{{ option.service }}</td>
+          <td>{{ option.amount }}</td>
+        </tr>
+      </ng-container>
+      <ng-template #noData>
+        <tr>
+          <td colspan="3">No data found</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>
