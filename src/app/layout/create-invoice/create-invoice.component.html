@@ -31,9 +31,10 @@
                   (change)="addAutoService()"
                   formControlName="hospital"
                 >
-                  <option value="1">DHQ Chakwal</option>
-                  <option value="88">DHQ Attock</option>
-                  <option value="98">DHQ Jhelum</option>
+                  <option value="-1"></option>
+                  <ng-container *ngFor="let hospital of hospitalList">
+                    <option [value]="hospital.id">{{ hospital.title }}</option>
+                  </ng-container>
                 </select>
               </div>
             </div>
@@ -95,6 +96,14 @@
                     >
                       <td style="width: 50px !important">{{ i + 1 }}</td>
                       <td style="width: 300px !important">
+                        <!-- <ng-container *ngIf="item.auto == 'Y'">
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="selectedService"
+                            readonly
+                          />
+                        </ng-container> -->
                         <p-dropdown
                           placeholder="Select a Service"
                           appendTo="body"

@@ -1,4 +1,14 @@
-<input type="text" class="form-control" id="exampleInputUsername1" placeholder="Service"  [(ngModel)]="inputValue" (input)="filterTable()">
+<input
+  type="text"
+  class="form-control"
+  id="exampleInputUsername1"
+  placeholder="Service"
+  [(ngModel)]="inputValue"
+  (input)="filterTable()"
+/>
+
+<input type="text" class="form-control" id="exampleInputUsername2" />
+
 <div *ngIf="showPopup" class="table-popup">
   <table>
     <thead>
@@ -10,7 +20,10 @@
     </thead>
     <tbody>
       <ng-container *ngIf="filteredSuggestions.length > 0; else noData">
-        <tr *ngFor="let option of filteredSuggestions" (click)="selectOption(option)">
+        <tr
+          *ngFor="let option of filteredSuggestions"
+          (click)="selectOption(option)"
+        >
           <td>{{ option.category }}</td>
           <td>{{ option.service }}</td>
           <td>{{ option.amount }}</td>
